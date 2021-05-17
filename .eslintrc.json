@@ -1,0 +1,35 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": ["react", "jsx-a11y"],
+  "settings": {
+    "react": {
+      "version": "16"
+    }
+  },
+  "overrides": [
+    {
+      "files": "**/*.test.js",
+      "globals": {
+        "jest": true,
+        "test": true,
+        "expect": true,
+        "afterEach": true,
+        "afterAll": true,
+        "beforeEach": true,
+        "beforeAll": true
+      }
+    }
+  ]
+}

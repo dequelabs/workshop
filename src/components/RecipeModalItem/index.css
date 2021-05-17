@@ -1,0 +1,38 @@
+.RecipeModalItem {
+  position: relative;
+}
+
+.RecipeModal__ingredient-delete,
+.RecipeModal__instruction-delete {
+  position: absolute;
+  top: 21px;
+  right: 0;
+  color: #666;
+  font-size: 1.2em;
+  background-color: transparent;
+}
+
+.dqpl-modal.RecipeModal .dqpl-dialog-inner .dqpl-content h3 {
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #666;
+}
+
+.RecipeModal .dqpl-link {
+  font-size: 1.1em;
+  text-align: right;
+}
+
+.RecipeModal__add-another {
+  text-align: right;
+}
+
+ul li.RecipeModalItem {
+  list-style: none;
+}
+
+ul li.RecipeModalItem,
+ol li.RecipeModalItem {
+  margin: 8px 0;
+  font-size: 1.1em;
+}

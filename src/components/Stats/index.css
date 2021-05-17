@@ -1,0 +1,47 @@
+.Stat {
+  border-left: 1px solid #ccc;
+  margin: 20px 0;
+  padding: 0 25px;
+  text-align: center;
+  flex: 1 0 auto;
+}
+
+.Stat.with-chart {
+  display: flex;
+  align-items: baseline;
+}
+
+.Stat.with-chart .Stat__label {
+  text-align: left;
+}
+
+.Stat.with-chart h2 {
+  display: flex;
+  margin-top: auto;
+}
+
+.Stat:first-child {
+  border-left: none;
+}
+
+.Stat__value {
+  font-size: 82px;
+  color: #4d4d4d;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Stat__value-icon {
+  width: 35px;
+  display: block;
+  margin-right: 10px;
+}
+
+.Stat__label {
+  font-size: 24px;
+  color: #666;
+  font-weight: normal;
+  text-transform: uppercase;
+}

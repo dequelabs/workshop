@@ -1,0 +1,71 @@
+.App .dqpl-top-bar img {
+  width: 30px;
+}
+
+h1 span {
+  text-transform: none;
+}
+
+.App .App__head {
+  background: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  z-index: 2;
+}
+
+.App .App__head,
+.App .dqpl-main-content {
+  width: 100%;
+  min-width: 1024px;
+}
+
+.App .dqpl-layout {
+  overflow-x: auto;
+}
+
+.App .App__head h1 {
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.App .dqpl-field-wrap {
+  margin-bottom: 0;
+}
+
+.App .dqpl-content {
+  max-height: calc(100vh - 300px);
+}
+
+.Stats {
+  border-bottom: 1px solid #ccc;
+}
+
+.Stats .confined {
+  display: flex;
+  justify-content: center;
+}
+
+.App .dqpl-layout .dqpl-main-content {
+  border: none;
+}
+
+.App .dqpl-layout .dqpl-main-content::before {
+  content: '';
+  position: absolute;
+  background-color: transparent;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  top: 70px;
+  left: 9px;
+  bottom: 0;
+  width: 18px;
+}
+
+.App .dqpl-layout .dqpl-main-content:focus::before {
+  border-left: 6px solid #fdfdfe;
+  border-right: 6px solid #fdfdfe;
+  background-color: #283640;
+}
+
+.App .dqpl-modal .dqpl-dialog-inner .dqpl-modal-header h2 {
+  padding: 10px 24px;
+}

@@ -1,0 +1,60 @@
+.Stat__value-histogram {
+  display: flex;
+  align-items: flex-end;
+  color: #333;
+  margin: 0 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Stat__value-histogram li {
+  width: 10px;
+  background: #d4dde0;
+  margin: 0 12.5px;
+  border: 1px solid #666;
+  position: relative;
+  font-size: 15px;
+}
+
+.Stat__value-histogram > li:last-child {
+  background: #0b0e11;
+  border: 1px solid #0b0e11;
+}
+
+.Stat__value-histogram > li::before {
+  content: '';
+  height: 30px;
+  position: absolute;
+  width: 1px;
+  top: -32px;
+  left: 4.5px;
+  background: #666;
+}
+
+.Stat__value-histogram span {
+  position: absolute;
+  top: -52px;
+  left: -4px;
+}
+
+.Histogram__value-wrap {
+  display: flex;
+  align-items: baseline;
+}
+
+.Histogram__value {
+  font-size: 82px;
+}
+
+.Histogram__value-wrap {
+  color: #4d4d4d;
+  font-weight: 100;
+}
+
+.Stat__value-histogram-month {
+  position: absolute;
+  margin-left: -6px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #333;
+}

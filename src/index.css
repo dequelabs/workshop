@@ -1,0 +1,42 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-size: 26px;
+  color: #333;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 28px;
+  color: #666;
+}
+
+h3 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 400;
+}
+
+body .dqpl-top-bar [role='menubar'],
+.confined {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+body .dqpl-top-bar [role='menubar'] > li:first-child {
+  border-left: 1px solid #5a6268;
+  border-right: 1px solid #5a6268;
+}
+
+body .dqpl-layout,
+body .dqpl-layout .dqpl-main-content {
+  padding: 0;
+}

@@ -1,0 +1,93 @@
+{
+  "name": "smashing-workshop",
+  "version": "1.0.0",
+  "description": "Building an accessible app",
+  "repository": "git@github.com:dequelabs/smashing-workshop.git",
+  "author": "Harris Schneiderman <harris.schneiderman@deque.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "parcel build src/index.html",
+    "start": "parcel src/index.html --port 1235",
+    "cy:open": "cypress open",
+    "cy:wait": "wait-on http://localhost:1235",
+    "test:e2e:serve": "npm start",
+    "test:e2e:cy": "run-s cy:wait cy:open",
+    "test:e2e": "run-p test:e2e:*",
+    "test": "jest"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "staticFiles": {
+    "staticPath": "src/img"
+  },
+  "jest": {
+    "testMatch": [
+      "**/*.test.js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>test-utils/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>test-utils/fileMock.js",
+      "\\.(css|less)$": "<rootDir>test-utils/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "dependencies": {
+    "@axe-core/react": "^4.1.1",
+    "cauldron-react": "^0.5.1",
+    "deque-pattern-library": "^4.2.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-syntax-class-properties": "^7.12.13",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-0": "^7.0.0",
+    "ally.js": "^1.4.1",
+    "autoprefixer": "^9.5.1",
+    "axe-core": "^3.2.2",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^26.6.3",
+    "cypress": "^3.2.0",
+    "cypress-axe": "^0.4.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "eslint": "^5.15.3",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-cypress": "^2.2.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
+    "jest": "^24.5.0",
+    "lint-staged": "^8.1.5",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-static-files-copy": "^2.0.0",
+    "prettier": "^1.16.4",
+    "sinon": "^10.0.0",
+    "wait-on": "^3.2.0"
+  }
+}

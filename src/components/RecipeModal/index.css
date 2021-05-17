@@ -1,0 +1,75 @@
+.RecipeModal .RecipeModal__inner::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  background-color: transparent;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+}
+
+.RecipeModal .RecipeModal__inner:focus {
+  outline: 0;
+}
+
+.RecipeModal .RecipeModal__inner:focus::before {
+  background-color: #283640;
+}
+
+.RecipeModal .dqpl-modal-header {
+  z-index: 2;
+}
+
+.RecipeModal.dqpl-modal .dqpl-dialog-inner .dqpl-content .dqpl-text-input,
+.RecipeModal.dqpl-modal .dqpl-dialog-inner .dqpl-content .dqpl-textarea {
+  margin-right: 50px;
+  width: 92%;
+  max-width: 92%;
+}
+
+.RecipeModal ul,
+.RecipeModal ol {
+  padding-left: 40px;
+  margin: 0;
+}
+
+.RecipeModal.dqpl-modal
+  .dqpl-dialog-inner
+  .dqpl-content
+  .RecipeModal__global
+  .dqpl-text-input {
+  width: 50px;
+  min-width: 50px;
+}
+
+.RecipeModal .dqpl-checkbox-wrap {
+  margin-left: -10px;
+}
+
+.RecipeModal .dqpl-error-wrap {
+  margin: 0;
+  min-height: 18px;
+}
+
+/* The recipe sections (ingredients/instructions) */
+.RecipeModal__group {
+  position: relative;
+}
+
+.RecipeModal__group::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  background-color: transparent;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+}
+
+.RecipeModal__group:focus {
+  outline: 0;
+}
+
+.RecipeModal__group:focus::before {
+  background-color: #283640;
+}

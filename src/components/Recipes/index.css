@@ -1,0 +1,162 @@
+.Recipes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 26px auto;
+  background: #fdfdfe;
+  flex-wrap: wrap;
+  max-width: 1350px;
+}
+
+.Recipes__card {
+  margin: 25px;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.16);
+  width: 277px;
+  text-align: center;
+}
+
+.Recipes__card-head {
+  position: relative;
+}
+
+.Recipes__card-head img {
+  width: 100%;
+}
+
+.Recipes__card-head img.edit {
+  width: 18px;
+}
+
+.Recipes__card-head button,
+.Recipes__card-head > div {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #fdfdfe;
+  top: 10px;
+  right: 10px;
+  font-size: 1.1em;
+}
+
+.Recipes__card-head > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4d4d4d;
+}
+
+.Recipes__card-content {
+  padding: 0 25px;
+  background: #fff;
+}
+
+.Recipes__card-content h3 {
+  margin: 10px 0;
+}
+
+.Recipes__card-content .Heading {
+  font-size: 24px;
+  color: #333;
+  font-weight: 400;
+}
+
+.Recipes__card dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Recipes__card dd,
+.Recipes__card dt {
+  flex: 1 0 50%;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.Recipes__card dt {
+  text-align: left;
+}
+
+.Recipes__card dd {
+  text-align: right;
+}
+
+.Recipes__card-foot button {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  padding: 15px;
+  box-shadow: none;
+}
+
+.Recipes__card-foot button:hover {
+  box-shadow: none;
+}
+
+.Recipes__card-foot button::before,
+.Recipes__card-foot button::after {
+  display: none;
+}
+
+.BracketLeft,
+.BracketRight {
+  opacity: 0;
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  font-weight: 100;
+  transition: all 500ms;
+  top: -10px;
+}
+
+.BracketLeft {
+  left: -3px;
+}
+
+.BracketRight {
+  right: -3px;
+}
+
+.Recipes__card-foot button:focus .BracketLeft,
+.Recipes__card-foot button:focus .BracketRight,
+.Recipes__card-foot button:hover .BracketLeft,
+.Recipes__card-foot button:hover .BracketRight {
+  opacity: 1;
+  transition: all 500ms;
+}
+
+.Recipes__card table {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.Recipes__card th {
+  color: #666;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: left;
+  padding: 5px 0;
+}
+
+.Recipes__card td {
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.Recipes__card td.Beginner {
+  color: #76bf98;
+}
+
+.Recipes__card td.Intermediate {
+  color: #6f4d0c;
+}
+
+.Recipes__card td.Advanced {
+  color: #d83251;
+}
+
+.Recipes__card-edit:focus {
+  outline: 0;
+}
