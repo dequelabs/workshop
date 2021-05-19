@@ -10,6 +10,7 @@ import './index.css';
 const RecipeModalItem = ({ edit, data, index, type, onDelete, ...other }) => {
   const Wrapper = edit ? 'div' : 'li';
   const text = type === 'instructions' ? 'Instruction' : 'Ingredient';
+
   return (
     <Wrapper className="RecipeModalItem">
       {edit ? (
@@ -17,14 +18,14 @@ const RecipeModalItem = ({ edit, data, index, type, onDelete, ...other }) => {
           <TextField
             required
             multiline={type === 'instructions'}
-            label={text}
+            label={`${text} ${index + 1}`}
             defaultValue={data}
             {...other}
           />
           <button
             type="button"
             className="RecipeModal__ingredient-delete"
-            aria-label="trash can icon"
+            aria-label={`delete ${text} ${index + 1}`}
             onClick={() => onDelete(index, type)}
           >
             <Icon type="fa-trash" />

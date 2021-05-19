@@ -107,3 +107,25 @@ test('closing view modal clears the "view" modal state', () => {
     })
   ).toBe(true);
 });
+
+test('The edit control is marked up as a semantic button', () => {
+  const props = getProps();
+  const wrapper = mount(<Recipes {...props} />);
+  // prove that the edit control is a semantic HTML button element!
+  expect(wrapper.find('button.Recipes__card-edit').exists()).toBe(true);
+});
+
+test('The edit control has a unique accessible name', () => {
+  const props = getProps();
+  const wrapper = mount(<Recipes {...props} />);
+  const editImages = wrapper.find('.Recipes__card-edit img');
+
+  recipes.forEach(({ name }, i) => {
+    expect(
+      editImages
+        .at(i)
+        .getDOMNode()
+        .getAttribute('alt')
+    ).toBe(`Edit ${name}`);
+  });
+});

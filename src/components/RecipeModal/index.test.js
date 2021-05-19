@@ -34,9 +34,15 @@ test('each text field has a unique accessible label', () => {
 test('each delete button has a unique accessible name', () => {
   const modal = mount(<RecipeModal {...defaultProps} />);
   const names = [];
-  modal.find('.RecipeModal__ingredient-delete').forEach(button => {
+  modal.find('button.RecipeModal__ingredient-delete').forEach(button => {
     const name = button.getDOMNode().getAttribute('aria-label');
     expect(names.includes(name)).toBeFalsy();
     names.push(name);
   });
+});
+
+test("the cook modal's yumminess input is programmatically required", () => {
+  const modal = mount(<RecipeModal {...defaultProps} edit={false} />);
+  const field = modal.find('TextField');
+  expect(field.prop('required')).toBe(true);
 });

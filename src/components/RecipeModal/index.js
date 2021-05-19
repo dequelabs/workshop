@@ -116,11 +116,15 @@ export default class RecipeModal extends Component {
               </div>
             ) : (
               <div className="RecipeModal__global">
-                <div className="dqpl-label">Rate the yumminess (0 - 50)</div>
                 <TextField
-                  label=" "
+                  required
+                  label="Rate the yumminess (0 - 50)"
                   defaultValue={`${recipe.yumminess}`}
-                  error={errors.yumminess ? 'Error!' : null}
+                  error={
+                    errors.yumminess
+                      ? 'Yumminess must be a number between 0 and 50'
+                      : null
+                  }
                   type="number"
                   min="0"
                   max="50"

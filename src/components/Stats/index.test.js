@@ -33,7 +33,6 @@ test('renders the stat icon images', () => {
 
 test('wraps each stat in a live region', () => {
   const stats = shallow(<Stats stats={statsStub} />);
-
   expect(stats.find('[aria-live][aria-relevant][aria-atomic]').length).toBe(
     statsStub.length
   );
