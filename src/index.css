@@ -25,13 +25,29 @@ h3 {
   font-weight: 400;
 }
 
-body .dqpl-top-bar [role='menubar'],
+body .dqpl-top-bar {
+  height: auto;
+}
+
+body .dqpl-top-bar ul,
 .confined {
   max-width: 1024px;
   margin: 0 auto;
 }
 
-body .dqpl-top-bar [role='menubar'] > li:first-child {
+body .dqpl-top-bar ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 6px;
+}
+
+body .dqpl-top-bar ul li.settings {
+  margin-left: auto;
+}
+
+body .dqpl-top-bar ul > li:first-child,
+body .dqpl-top-bar ul > li:last-child {
   border-left: 1px solid #5a6268;
   border-right: 1px solid #5a6268;
 }
@@ -39,4 +55,8 @@ body .dqpl-top-bar [role='menubar'] > li:first-child {
 body .dqpl-layout,
 body .dqpl-layout .dqpl-main-content {
   padding: 0;
+}
+
+body .dqpl-layout .dqpl-main-content {
+  border-left: none;
 }

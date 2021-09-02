@@ -12,12 +12,6 @@ h1 span {
   z-index: 2;
 }
 
-.App .App__head,
-.App .dqpl-main-content {
-  width: 100%;
-  min-width: 1024px;
-}
-
 .App .dqpl-layout {
   overflow-x: auto;
 }
@@ -40,6 +34,7 @@ h1 span {
 }
 
 .Stats .confined {
+  flex-wrap: wrap;
   display: flex;
   justify-content: center;
 }
