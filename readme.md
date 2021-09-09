@@ -18,6 +18,39 @@
 yarn
 ```
 
+### Backup plan: Docker
+
+```sh
+$ docker-compose up -d --build
+```
+
+if you don't want to use `docker-compose`...
+
+```sh
+# build the image...
+$ docker build -t recipes
+
+# spin it up...
+$ docker run \
+    -it \
+    --rm \
+    -v ${PWD}:/app \
+    -v /app/node_modules \
+    -p 1235:1235 \
+    -e CHOKIDAR_USEPOLLING=true \
+    recipes
+# once that completes, navigate to http://localhost:1235
+
+# NOTE: For some of the exercises below, we will be writing
+# and running the unit tests. To run the tests you will have
+# to run them from within the container.
+#
+# - grab the container ID: `docker ps`
+# - shell into the container: `docker exec -it CONTAINER_ID sh`
+#
+# from there you should be able to simply run `yarn test`
+```
+
 ## Workshop!
 
 **NOTE**: this particular app is built with react, an understanding of react will be helpful but is not required. We will walk you through everything!
