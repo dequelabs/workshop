@@ -26,6 +26,14 @@ Ensure you have [docker](https://docs.docker.com/get-docker/) and (optionally) [
 
 ```sh
 $ docker-compose up -d --build
+# NOTE: For some of the exercises below, we will be writing
+# and running the unit tests. To run the tests you will have
+# to run them from within the container.
+#
+# - grab the container ID: `docker ps`
+# - shell into the container: `docker exec -it CONTAINER_ID sh`
+#
+# from there you should be able to simply run `yarn test`
 ```
 
 #### if you don't want to use `docker-compose`...
@@ -44,15 +52,6 @@ $ docker run \
     -e CHOKIDAR_USEPOLLING=true \
     recipes
 # once that completes, navigate to http://localhost:1235
-
-# NOTE: For some of the exercises below, we will be writing
-# and running the unit tests. To run the tests you will have
-# to run them from within the container.
-#
-# - grab the container ID: `docker ps`
-# - shell into the container: `docker exec -it CONTAINER_ID sh`
-#
-# from there you should be able to simply run `yarn test`
 ```
 
 ## Workshop!
