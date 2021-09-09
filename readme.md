@@ -49,7 +49,6 @@ $ docker run \
     -v ${PWD}:/app \
     -v /app/node_modules \
     -p 1235:1235 \
-    -e CHOKIDAR_USEPOLLING=true \
     recipes
 # once that completes, navigate to http://localhost:1235
 ```
