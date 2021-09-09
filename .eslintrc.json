@@ -25,6 +25,7 @@
         "jest": true,
         "test": true,
         "expect": true,
+        "describe": true,
         "afterEach": true,
         "afterAll": true,
         "beforeEach": true,

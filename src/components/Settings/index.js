@@ -11,7 +11,8 @@ const Checkbox = ({ onClick, label, checked }) => {
       return;
     }
 
-    e.target.click();
+    e.preventDefault(); // don't scroll the page!
+    onClick();
   };
 
   return (
@@ -26,10 +27,14 @@ const Checkbox = ({ onClick, label, checked }) => {
       >
         {checked ? CHECK_MARK : ''}
       </div>
-      <div className="Label">{label}</div>
+      {/* eslint-disable-next-line */}
+      <div className="Label" onClick={onClick}>
+        {label}
+      </div>
     </div>
   );
 };
+
 Checkbox.propTypes = {
   onClick: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
@@ -92,14 +97,16 @@ const Settings = () => {
           {expanded && (
             <div id="advanced-settings">
               <Checkbox
-                label="Collect usage data"
+                label="Collect food usage data"
                 onClick={checkboxChangeFactory('collect')}
                 checked={collectChecked}
               />
             </div>
           )}
         </div>
-        <button className="SettingsSubmit">Submit</button>
+        <button type="submit" className="SettingsSubmit">
+          Submit
+        </button>
       </div>
     </form>
   );
