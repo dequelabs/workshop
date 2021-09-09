@@ -18,7 +18,9 @@
 yarn
 ```
 
-### Backup plan: Docker
+### Having trouble getting setup? Try Docker
+
+Ensure you have [docker](https://docs.docker.com/get-docker/) and (optionally) [docker compose](https://docs.docker.com/compose/install/) installed.
 
 ```sh
 $ docker-compose up -d --build
