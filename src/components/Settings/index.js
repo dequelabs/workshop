@@ -20,6 +20,7 @@ const Checkbox = ({ onClick, label, checked }) => {
       <div
         className="Checkbox"
         role="checkbox"
+        aria-label="checkbox"
         aria-checked={false}
         tabIndex={0}
         onClick={onClick}
@@ -94,15 +95,15 @@ const Settings = () => {
               {expanded ? <span>&#8673;</span> : <span>&#8675;</span>}
             </span>
           </button>
-          {expanded && (
-            <div id="advanced-settings">
+          <div id="advanced-settings">
+            {expanded && (
               <Checkbox
                 label="Collect food usage data"
                 onClick={checkboxChangeFactory('collect')}
                 checked={collectChecked}
               />
-            </div>
-          )}
+            )}
+          </div>
         </div>
         <button type="submit" className="SettingsSubmit">
           Submit

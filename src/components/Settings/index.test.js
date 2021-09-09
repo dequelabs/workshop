@@ -1,10 +1,22 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import axe from '../../../test-utils/axe';
 import Settings from './';
 
 describe('Settings component', () => {
+  let wrapper;
+
+  afterEach(async () => {
+    if (!wrapper) {
+      return;
+    }
+
+    const results = await axe(wrapper.getDOMNode());
+    expect(results).toHaveNoViolations();
+  });
+
   test('renders the expected settings UI', () => {
-    const wrapper = mount(<Settings />);
+    wrapper = mount(<Settings />);
 
     expect(wrapper.find('form').exists()).toBe(true);
     expect(wrapper.find('button[type="submit"]').exists()).toBe(true);
@@ -19,16 +31,16 @@ describe('Settings component', () => {
 
   describe('advanced settings', () => {
     test('clicking trigger expands the advanced settings', () => {
-      const wrapper = mount(<Settings />);
+      wrapper = mount(<Settings />);
 
-      expect(wrapper.find('#advanced-settings').exists()).toBe(false);
+      expect(wrapper.find('#advanced-settings Checkbox').exists()).toBe(false);
 
       wrapper
         .find('button[aria-controls="advanced-settings"]')
         .simulate('click');
       wrapper.update();
 
-      expect(wrapper.find('#advanced-settings').exists()).toBe(true);
+      expect(wrapper.find('#advanced-settings Checkbox').exists()).toBe(true);
       expect(
         wrapper.find('Checkbox[label="Collect food usage data"]').exists()
       ).toBe(true);
@@ -37,7 +49,7 @@ describe('Settings component', () => {
 
   describe('Custom checkboxes', () => {
     test('are focusable with expected role of "checkbox"', () => {
-      const wrapper = mount(<Settings />);
+      wrapper = mount(<Settings />);
       // expand the advanced settings...
       wrapper
         .find('button[aria-controls="advanced-settings"]')
@@ -53,7 +65,7 @@ describe('Settings component', () => {
     });
 
     test('set aria-checked attribute', () => {
-      const wrapper = mount(<Settings />);
+      wrapper = mount(<Settings />);
 
       expect(
         wrapper
@@ -64,7 +76,7 @@ describe('Settings component', () => {
     });
 
     test('properly toggle checked state when clicked', () => {
-      const wrapper = mount(<Settings />);
+      wrapper = mount(<Settings />);
       const checkbox = wrapper.find('[role="checkbox"]').at(0);
 
       expect(checkbox.text()).toBe('');
@@ -76,7 +88,7 @@ describe('Settings component', () => {
     });
 
     test('properly toggle checked state with space bar keydown', () => {
-      const wrapper = mount(<Settings />);
+      wrapper = mount(<Settings />);
       const checkbox = wrapper.find('[role="checkbox"]').at(0);
 
       expect(checkbox.text()).toBe('');
@@ -90,7 +102,7 @@ describe('Settings component', () => {
     });
 
     test('properly toggle checked state when label is clicked', () => {
-      const wrapper = mount(<Settings />);
+      wrapper = mount(<Settings />);
       const checkbox = wrapper.find('[role="checkbox"]').at(0);
       const label = wrapper.find('.Label').at(0);
 

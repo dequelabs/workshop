@@ -20,7 +20,7 @@
   },
   "overrides": [
     {
-      "files": "**/*.test.js",
+      "files":[ "**/*.test.js", "test-utils/**/*.js"],
       "globals": {
         "jest": true,
         "test": true,
