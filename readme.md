@@ -22,11 +22,13 @@ yarn
 
 Ensure you have [docker](https://docs.docker.com/get-docker/) and (optionally) [docker compose](https://docs.docker.com/compose/install/) installed.
 
+#### `docker-compose`
+
 ```sh
 $ docker-compose up -d --build
 ```
 
-if you don't want to use `docker-compose`...
+#### if you don't want to use `docker-compose`...
 
 ```sh
 # build the image...
