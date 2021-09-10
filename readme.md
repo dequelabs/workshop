@@ -87,14 +87,20 @@ Let's run axe on our app now that we've got passing unit tests.
 
 1. install the [axe extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US)
 
-- sign up for devtools too! https://www.deque.com/axe/devtools/
+_sign up for devtools too! https://www.deque.com/axe/devtools/_
 
 1. navigate browser to `http://localhost:1235`
 1. open up axe devtools
 1. scan the page
 1. save results!
 
-- _if you happened to have opened up the devtools console earlier, you probably saw a few of these violations printed out in the console via [`@axe-core/react`](https://www.npmjs.com/package/@axe-core/react)_
+_if you happened to have opened up the devtools console earlier, you probably saw a few of these violations printed out in the console via [`@axe-core/react`](https://www.npmjs.com/package/@axe-core/react)_
+
+---
+
+_:robot: quick demo of [`@axe-core/puppeteer`](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/puppeteer/README.md)!_
+
+---
 
 1. review serious and critical issues
 1. fix all of those issues
