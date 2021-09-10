@@ -55,7 +55,7 @@ $ docker run \
 
 ## Workshop!
 
-**NOTE**: this particular app is built with react, an understanding of react will be helpful but is not required. We will walk you through everything!
+**NOTE**: This particular app is built with react. An understanding of react will be helpful but is not required. We will walk you through everything!
 
 Go ahead and run your local dev server (`yarn start`). Feel free to play around with the app and get familiar with it.
 
