@@ -11,7 +11,7 @@ const Stats = ({ stats }) => (
           className={`Stat ${histogram ? 'with-chart' : ''}`}
           key={`${label}-${value}`}
         >
-          <h2>
+          <div className="Heading">
             <div className="Stat__value">
               {icon && (
                 <img
@@ -35,7 +35,7 @@ const Stats = ({ stats }) => (
                 </div>
               )}
             </div>
-          </h2>
+          </div>
         </div>
       ))}
     </div>

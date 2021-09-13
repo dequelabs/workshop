@@ -15,7 +15,10 @@
   text-align: left;
 }
 
-.Stat.with-chart h2 {
+.Stat.with-chart h2,
+.Stat.with-chart .Heading {
+  font-size: 28px;
+  color: #666;
   display: flex;
   margin-top: auto;
 }

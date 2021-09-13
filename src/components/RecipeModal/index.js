@@ -78,9 +78,14 @@ export default class RecipeModal extends Component {
               ref={el => {
                 setWrapperRef('ingredientsWrapper', el);
               }}
-              aria-labelledby="ingredients-heading"
             >
-              {edit ? ingredientItems : <ul>{ingredientItems}</ul>}
+              {edit ? (
+                <div role="group" aria-labelledby="ingredients-heading">
+                  {ingredientItems}
+                </div>
+              ) : (
+                <ul aria-labelledby="ingredients-heading">{ingredientItems}</ul>
+              )}
             </div>
             {edit && (
               <div className="RecipeModal__add-another">
@@ -100,9 +105,16 @@ export default class RecipeModal extends Component {
               ref={el => {
                 setWrapperRef('instructionsWrapper', el);
               }}
-              aria-labelledby="instructions-heading"
             >
-              {edit ? instructionItems : <ol>{instructionItems}</ol>}
+              {edit ? (
+                <div role="group" aria-labelledby="instructions-heading">
+                  {instructionItems}
+                </div>
+              ) : (
+                <ol aria-labelledby="instructions-heading">
+                  {instructionItems}
+                </ol>
+              )}
             </div>
             {edit ? (
               <div className="RecipeModal__add-another">

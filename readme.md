@@ -55,6 +55,12 @@ $ docker run \
 
 ## Workshop!
 
+---
+
+Day I
+
+---
+
 **NOTE**: This particular app is built with react. An understanding of react will be helpful but is not required. We will walk you through everything!
 
 Go ahead and run your local dev server (`yarn start`). Feel free to play around with the app and get familiar with it.
@@ -81,13 +87,21 @@ Fix the failing tests!
 
 Test the live region out with a screen reader!
 
+---
+
+_:robot: quick demo of [`@axe-core/puppeteer`](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/puppeteer/README.md)!_
+
+---
+
 ### axe DevTools
 
 Let's run axe on our app now that we've got passing unit tests.
 
 1. install the [axe extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US)
 
-_sign up for devtools too! https://www.deque.com/axe/devtools/_
+_sign up for axe DevTools Pro too! https://www.deque.com/axe/devtools/_
+
+> NOTE: If you have an expired trial, send us your email in slack or zoom chat and we will extend your trial!
 
 1. navigate browser to `http://localhost:1235`
 1. open up axe devtools
@@ -96,15 +110,15 @@ _sign up for devtools too! https://www.deque.com/axe/devtools/_
 
 _if you happened to have opened up the devtools console earlier, you probably saw a few of these violations printed out in the console via [`@axe-core/react`](https://www.npmjs.com/package/@axe-core/react)_
 
----
-
-_:robot: quick demo of [`@axe-core/puppeteer`](https://github.com/dequelabs/axe-core-npm/blob/develop/packages/puppeteer/README.md)!_
-
----
-
 1. review serious and critical issues
 1. fix all of those issues
 1. run the scan again until you have 0 violations (you can ignore the needs review color contrast issues -- no real issues there)
+
+---
+
+Day II
+
+---
 
 #### Enter IGT
 
@@ -112,12 +126,13 @@ _:robot: quick demo of [`@axe-core/puppeteer`](https://github.com/dequelabs/axe-
 
 axe Devtools Pro's Intelligent Guided Tests will guide you through testing that can't be fully automated and needs a human to answer simple questions in order to raise accessiblity violations that axe can't find on its own. Don't worry, these questions will be very easy to answer and require 0 accessiblity testing expertise.
 
-##### Page Info IGT
+#### Structure IGT
 
-Run the very simple Page Info IGT to get acclimated with Intelligent Guided Testing
+> Find / fix issues related to heading structure and document title
 
-- fix the title issue by adding a descriptive document title
-- run Page Info IGT again and verify that no remaining Page Info issues exist (#axeCleanPageInfoIGT)
+#### Interactive Element IGT
+
+> Find / fix issues related to interactive elements including their various states (on the settings page)
 
 ##### Keyboard IGT
 
