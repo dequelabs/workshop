@@ -67,6 +67,10 @@ Go ahead and run your local dev server (`yarn start`). Feel free to play around 
 
 ### [install "axe Accessibility Linter" if using VSCode!](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter)
 
+### Check the awesome recipes app out @ http://localhost:1235
+
+:cake: :spaghetti: :cow: :cheese: :leaves:
+
 ### Component structure
 
 - `src/index.js` is the entry point to the app. It handles rendering the whole app and, when not in production, will include [`@axe-core/react`](https://www.npmjs.com/package/@axe-core/react)
