@@ -23,19 +23,22 @@ const Recipes = ({
         <Fragment key={recipe.name}>
           <div className="Recipes__card">
             <div className="Recipes__card-head">
-              <div
+              <button
                 className="Recipes__card-edit"
                 onClick={() => {
                   updateModalState({ edit: recipe.name });
                 }}
-                tabIndex={0}
               >
-                <img src={pencil} className="edit" alt="Edit" />
-              </div>
-              <img src={recipe.image} className="Recipe__image" />
+                <img
+                  src={pencil}
+                  className="edit"
+                  alt={`Edit ${recipe.name}`}
+                />
+              </button>
+              <img src={recipe.image} alt="" className="Recipe__image" />
             </div>
             <div className="Recipes__card-content">
-              <div className="Heading">{recipe.name}</div>
+              <h3>{recipe.name}</h3>
               <table>
                 <tbody>
                   <tr>

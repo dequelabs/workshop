@@ -14,14 +14,14 @@ const Checkbox = ({ onClick, label, checked }) => {
     e.preventDefault(); // don't scroll the page!
     onClick();
   };
-
+  const labelId = `${label.replace(/\s/g, '')}-label`;
   return (
     <div className="Field">
       <div
         className="Checkbox"
         role="checkbox"
-        aria-label="checkbox"
-        aria-checked={false}
+        aria-labelledby={labelId}
+        aria-checked={checked}
         tabIndex={0}
         onClick={onClick}
         onKeyDown={onCheckboxKeydown}
@@ -29,7 +29,7 @@ const Checkbox = ({ onClick, label, checked }) => {
         {checked ? CHECK_MARK : ''}
       </div>
       {/* eslint-disable-next-line */}
-      <div className="Label" onClick={onClick}>
+      <div className="Label" onClick={onClick} id={labelId}>
         {label}
       </div>
     </div>
@@ -89,6 +89,7 @@ const Settings = () => {
             aria-controls="advanced-settings"
             className="Expandy__head"
             onClick={onAdvancedSettingsClick}
+            aria-expanded={expanded}
           >
             Advanced Settings
             <span className="Expandy__arrow">

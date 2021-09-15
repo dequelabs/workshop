@@ -69,10 +69,32 @@ describe('when in "edit mode"', () => {
       node.getAttribute('aria-describedby').includes(node.nextElementSibling.id)
     );
   };
-  test.todo('the ingredients group is labelled by the "Ingredients" heading');
-  test.todo('the instructions group is labelled by the "Instructions" heading');
 
-  test.skip('handles errors', () => {
+  test('the ingredients group is labelled by the "Ingredients" heading', () => {
+    const modal = mount(<RecipeModal {...defaultProps} />);
+    const ingredientsGroup = modal.find('[role="group"]').at(0);
+
+    expect(
+      ingredientsGroup
+        .getDOMNode()
+        .getAttribute('aria-labelledby')
+        .includes('ingredients-heading')
+    ).toBe(true);
+  });
+
+  test('the instructions group is labelled by the "Instructions" heading', () => {
+    const modal = mount(<RecipeModal {...defaultProps} />);
+    const instructionsGroup = modal.find('[role="group"]').at(1);
+
+    expect(
+      instructionsGroup
+        .getDOMNode()
+        .getAttribute('aria-labelledby')
+        .includes('instructions-heading')
+    ).toBe(true);
+  });
+
+  test('handles errors', () => {
     const errors = {
       // the 1st ingredient is empty
       ingredients: [0],
@@ -86,17 +108,54 @@ describe('when in "edit mode"', () => {
     expect(ingredients.length).toBe(defaultProps.recipe.ingredients.length);
     expect(instructions.length).toBe(defaultProps.recipe.instructions.length);
 
-    // TODO: test that for each invalid (erroneous) instruction / ingredient we:
-    // - set `aria-invalid=true`
-    // - associate the field with its error message via `aria-describedby`
-    //
-    // hint: see `handlesError` function above
+    ingredients.forEach((input, index) => {
+      const node = input.getDOMNode();
+      const shouldHaveError = errors.ingredients.includes(index);
+
+      // erroneous fields
+      if (shouldHaveError) {
+        expect(handlesError(node)).toBe(true);
+        return;
+      }
+
+      // non-erroneous fields
+      expect(node.getAttribute('aria-invalid')).toBe('false');
+    });
+
+    instructions.forEach((textarea, index) => {
+      const node = textarea.getDOMNode();
+      const shouldHaveError = errors.instructions.includes(index);
+
+      if (shouldHaveError) {
+        expect(handlesError(node)).toBe(true);
+        return;
+      }
+
+      expect(node.getAttribute('aria-invalid')).toBe('false');
+    });
   });
 });
 
 describe('when not in "edit mode"', () => {
-  test.todo('the ingredients list is labelled by the "Ingredients" heading');
-  test.todo(
-    'the instructions ordered list is labelled by the "Instructions" heading'
-  );
+  test('the ingredients list is labelled by the "Ingredients" heading', () => {
+    const modal = mount(<RecipeModal {...defaultProps} edit={false} />);
+    expect(
+      modal
+        .find('.RecipeModal__group ul')
+        .getDOMNode()
+        .getAttribute('aria-labelledby')
+        .includes('ingredients-heading')
+    ).toBe(true);
+  });
+
+  test('the instructions ordered list is labelled by the "Instructions" heading', () => {
+    const modal = mount(<RecipeModal {...defaultProps} edit={false} />);
+    expect(
+      modal
+        .find('.RecipeModal__group ol')
+        .getDOMNode()
+        .getAttribute('aria-labelledby')
+        .includes('instructions-heading')
+    ).toBe(true);
+  });
 });
