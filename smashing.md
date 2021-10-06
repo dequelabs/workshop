@@ -1,8 +1,4 @@
-# Deque Workshop
-
-> Looking for the smashing workhshop content? See [`smashing.md`](./smashing.md)
-
-> [view slides / wireframes](https://docs.google.com/presentation/d/1smLkcotk51pMVtYKHvmCsbVC6hfCk78GArVNg4ABG88/edit?usp=sharing)
+# Deque Workshop: 10.14.2021 - 10.15.2021
 
 ## Prerequisites
 
@@ -58,6 +54,12 @@ $ docker run \
 ```
 
 ## Workshop!
+
+---
+
+Day I
+
+---
 
 **NOTE**: This particular app is built with react. An understanding of react will be helpful but is not required. We will walk you through everything!
 
@@ -115,6 +117,12 @@ _if you happened to have opened up the devtools console earlier, you probably sa
 1. review serious and critical issues
 1. fix all of those issues
 1. run the scan again until you have 0 violations (you can ignore the needs review color contrast issues -- no real issues there)
+
+---
+
+Day II
+
+---
 
 #### Enter IGT
 
@@ -189,4 +197,3 @@ test('marks each icon as decorative', () => {
 - get axe running in your unit tests
 - write a11y-specific unit tests
 - run IGTs on your page(s)
-- #axeClean
