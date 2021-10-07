@@ -7,12 +7,7 @@
 ## Prerequisites
 
 - [`node.js`](https://nodejs.org/en/) version 14 or greater.
-- [`yarn`](https://yarnpkg.com/) package
-
-### Be sure to install:
-
-- node version 14+
-- yarn
+- [`yarn`](https://classic.yarnpkg.com/lang/en/) package manager (classic ~1.22)
 
 ## Setup
 
