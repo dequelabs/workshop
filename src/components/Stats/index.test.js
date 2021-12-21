@@ -35,6 +35,9 @@ test('renders the stat icon images', () => {
 // https://www.w3.org/TR/wai-aria-1.1/#aria-relevant
 // https://www.w3.org/TR/wai-aria-1.1/#aria-atomic
 // https://schne324.github.io/live-region-playground/
+// aria-live=polite
+// aria-relevant=text
+// aria-atomic=true
 test('wraps each stat in a live region', () => {
   const stats = shallow(<Stats stats={statsStub} />);
 

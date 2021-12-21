@@ -54,12 +54,12 @@
 .Recipes__card-content h3 {
   margin: 10px 0;
 }
-
+/*
 .Recipes__card-content .Heading {
   font-size: 24px;
   color: #333;
   font-weight: 400;
-}
+} */
 
 .Recipes__card dl {
   display: flex;
@@ -146,7 +146,7 @@
 }
 
 .Recipes__card td.Beginner {
-  color: #76bf98;
+  color: #00853e;
 }
 
 .Recipes__card td.Intermediate {
@@ -155,8 +155,4 @@
 
 .Recipes__card td.Advanced {
   color: #d83251;
-}
-
-.Recipes__card-edit:focus {
-  outline: 0;
 }
