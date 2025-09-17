@@ -57,8 +57,11 @@
 
 .Recipes__card-content .Heading {
   font-size: 24px;
-  color: #333;
-  font-weight: 400;
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  margin-top: -55px;
+  width: 230px;
 }
 
 .Recipes__card dl {

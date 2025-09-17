@@ -10,7 +10,10 @@ ENV PATH /app/node_modules/.bin:$PATH
 # install app dependencies
 COPY package.json ./
 COPY yarn.lock ./
-RUN yarn --silent
+# install build tools needed for some native modules (fsevents, node-gyp, etc.)
+RUN apk add --no-cache --virtual .build-deps python3 make g++ \
+	&& yarn --silent \
+	&& apk del .build-deps
 
 # add app
 COPY . ./
